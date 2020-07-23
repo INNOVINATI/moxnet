@@ -1,3 +1,4 @@
+from src.renderer import Renderer
 from .website import Website
 
 
@@ -6,6 +7,7 @@ class Network(object):
     def __init__(self, domains: list, settings: dict = None):
         self.sites = [Website(domain=d) for d in domains]
         self.settings = settings
+        self.renderer = Renderer()
 
     def info(self):
         print('------ moxnet ------')
@@ -15,6 +17,8 @@ class Network(object):
         print('--------------------')
 
     def build(self, path=None):
+        # TODO: Build proper paths in each site
+        self.renderer.render(self.sites)
         pass
 
     @property

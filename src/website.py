@@ -1,12 +1,14 @@
 import random
 
+import lorem as lorem
+
 
 class Page(object):
 
     def __init__(self, id: int, domain: str):
         self.id = id
         self.domain = domain
-        self.text = self._gen_text()
+        self.text = lorem.text()
         self.links = set([])
 
     def title(self):
@@ -18,10 +20,6 @@ class Page(object):
     def build(self):
         # TODO: Convert links from integer to "/page{integer}.html" format
         pass
-
-    @staticmethod
-    def _gen_text():
-        return 'Lorem ipsum dolor sit amet'
 
 
 class Website(object):
