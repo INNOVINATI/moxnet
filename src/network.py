@@ -17,9 +17,9 @@ class Network(object):
         print('--------------------')
 
     def build(self, path=None):
-        # TODO: Build proper paths in each site
+        for site in self.sites:
+            site.build()
         self.renderer.render(self.sites)
-        pass
 
     @property
     def page_count(self):

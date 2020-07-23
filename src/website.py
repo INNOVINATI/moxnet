@@ -47,4 +47,8 @@ class Website(object):
             reachable |= links
         return pages
 
+    def build(self):
+        for page in self.pages:
+            page.build()
+
 
