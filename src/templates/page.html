@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+</head>
+<body style="text-align: center">
+    <h1>Page #{{ page.id }}</h1>
+    <p>{{ page.text }}</p>
+    <hr>
+    <ul>
+        {% for link in page.links %}
+        <li>{{ link }}</li> <!-- TODO: Build proper link -->
+        {% endfor %}
+    </ul>
+</body>
+</html>
