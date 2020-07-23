@@ -10,16 +10,16 @@ class Page(object):
         self.domain = domain
         self.text = lorem.text()
         self.links = set([])
+        self.path = self.furl(self.id)
 
     def title(self):
         return f'{self.domain} - Page{self.id}'
 
-    def url(self):
-        return f'http://{self.domain}/page{self.id}.html'
+    def furl(self, id):
+        return f'http://{self.domain}/page{id}.html'
 
     def build(self):
-        # TODO: Convert links from integer to "/page{integer}.html" format
-        pass
+        map(lambda link: self.furl(link) if type == int else link, list(self.links))
 
 
 class Website(object):
