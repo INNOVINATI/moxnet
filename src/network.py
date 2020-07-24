@@ -19,7 +19,7 @@ class Network(object):
     def build(self, path=None):
         for site in self.sites:
             site.build()
-        self.renderer.render(self.sites)
+        self.renderer.render(self.sites, path)
 
     @property
     def page_count(self):

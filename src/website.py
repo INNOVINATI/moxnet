@@ -19,7 +19,7 @@ class Page(object):
         return f'http://{self.domain}/page{id}.html'
 
     def build(self):
-        map(lambda link: self.format_url(link) if type(link) is int else link, list(self.links))
+        self.links = [self.format_url(link) if type(link) is int else link for link in self.links]
 
 
 class Website(object):
