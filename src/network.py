@@ -5,7 +5,7 @@ from src.website import Website
 
 class Network(object):
 
-    def __init__(self, domains: list, settings: dict = None):
+    def __init__(self, domains: list, settings: dict = {}):
         self.sites = [Website(domain=d) for d in domains]
         self.settings = Settings(**settings)
         self.renderer = Renderer()
