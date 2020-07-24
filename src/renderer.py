@@ -14,4 +14,6 @@ class Renderer(object):
         self.template = self.engine.get_template('page.html')
 
     def render(self, sites: [Website], path: str = None):
-        pass
+        return list(map(lambda site:
+                        list(map(lambda page:
+                                 self.template.render(page=page), site.pages)), sites))
