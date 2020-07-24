@@ -1,3 +1,5 @@
+import random
+
 from src.renderer import Renderer
 from src.settings import Settings
 from src.website import Website
@@ -5,9 +7,17 @@ from src.website import Website
 
 class Network(object):
 
-    def __init__(self, domains: list, settings: dict = {}):
-        self.sites = [Website(domain=d) for d in domains]
-        self.settings = Settings(**settings)
+    def __init__(self, settings: Settings):
+        self.settings = settings
+        self.sites = []
+        num_pages = settings.num_pages/settings.num_domains
+        for i in range(settings.num_domains):
+            domain = f'site{i}'
+            k = random.randint(0, settings.num_externals)
+            ext_links = random.sample(range(settings.num_externals), k)
+            w = Website(domain=domain, num_pages=num_pages,
+                        ext_links=ext_links)
+            self.sites.append(w)
         self.renderer = Renderer()
 
     def info(self):
