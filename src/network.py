@@ -29,3 +29,6 @@ class Network(object):
     def link_count(self):
         return sum([len(p.links) for s in self.sites for p in s.pages.values()])
 
+    def _link_sites(self):
+        # TODO: Randomly inject links between websites by using Website.injext_links
+        pass
