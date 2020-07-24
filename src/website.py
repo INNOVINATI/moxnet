@@ -12,6 +12,7 @@ class Page(object):
         self.links = set([])
         self.path = self.format_url(self.id)
 
+    @property
     def title(self):
         return f'{self.domain} - Page{self.id}'
 
