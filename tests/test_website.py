@@ -11,6 +11,6 @@ class TestWebsiteInit(TestCase):
     def test_ext_links(self):
         links = ['https://duckduckgo.com', 'http://github.com']
         w = Website('test.local', ext_links=links)
-        self.assertTrue(any([any([l in page.links for l in links]) for page in w.pages.values()]))
+        self.assertTrue(any([any([l in page.links for l in links]) for page in w.pages]))
 
 

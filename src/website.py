@@ -34,8 +34,8 @@ class Website(object):
         ls = links if links else self.external_links
         for link in ls:
             # Insert external/real URLs at random
-            page = random.choice(len(self.pages))
-            self.pages[page].links.add(link)
+            page = random.choice(self.pages)
+            self.pages[page.id].links.add(link)
 
     def _generate(self, size: int):
         ids = range(size)
