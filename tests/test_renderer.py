@@ -1,5 +1,4 @@
 from unittest import TestCase
-from pprint import pprint
 
 from src.renderer import Renderer
 from src.website import Website
