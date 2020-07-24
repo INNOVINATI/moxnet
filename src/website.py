@@ -10,33 +10,36 @@ class Page(object):
         self.domain = domain
         self.text = lorem.text()
         self.links = set([])
-        self.path = self.furl(self.id)
+        self.path = self.format_url(self.id)
 
     def title(self):
         return f'{self.domain} - Page{self.id}'
 
-    def furl(self, id):
+    def format_url(self, id):
         return f'http://{self.domain}/page{id}.html'
 
     def build(self):
-        map(lambda link: self.furl(link) if type(link) is int else link, list(self.links))
+        map(lambda link: self.format_url(link) if type(link) is int else link, list(self.links))
 
 
 class Website(object):
 
-    def __init__(self, domain, num_pages=10, ext_links=['http://google.com']):
+    def __init__(self, domain: str, num_pages=10, ext_links=['http://google.com', 'http://www.example.com']):
         self.domain = domain
         self.external_links = ext_links
-        prange = range(num_pages)
-        self.pages = self._generate(len(prange))
-        for link in self.external_links:
+        self.pages = self._generate(num_pages)
+        self.injext_links()
+
+    def injext_links(self, links: [int] = None):
+        ls = links if links else self.external_links
+        for link in ls:
             # Insert external/real URLs at random
-            page = random.choice(prange)
+            page = random.choice(len(self.pages))
             self.pages[page].links.add(link)
 
-    def _generate(self, size):
+    def _generate(self, size: int):
         ids = range(size)
-        pages = {i: Page(id=i, domain=self.domain) for i in ids}
+        pages = [Page(id=i, domain=self.domain) for i in ids]
         reachable = {0}  # root page
         while len(reachable) < size:
             node = random.choice(list(reachable))
@@ -50,5 +53,4 @@ class Website(object):
     def build(self):
         for page in self.pages:
             page.build()
-
 
