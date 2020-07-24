@@ -1,12 +1,13 @@
 from src.renderer import Renderer
-from .website import Website
+from src.settings import Settings
+from src.website import Website
 
 
 class Network(object):
 
     def __init__(self, domains: list, settings: dict = None):
         self.sites = [Website(domain=d) for d in domains]
-        self.settings = settings
+        self.settings = Settings(**settings)
         self.renderer = Renderer()
 
     def info(self):
