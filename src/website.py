@@ -17,7 +17,10 @@ class Page(object):
         return f'{self.domain} - Page{self.id}'
 
     def format_url(self, id):
-        return f'http://{self.domain}/page{id}.html'
+        url = f'http://{self.domain}.moxnet.local'
+        if id == 0:
+            return f'{url}/index.html'
+        return f'{url}/page{id}.html'
 
     def build(self):
         self.links = [self.format_url(link) if type(link) is int else link for link in self.links]
