@@ -1,9 +1,8 @@
 # moxnet
 Generate a local network of random websites
 
-[![Contributors][contributors-shield]][contributors-url]]
-[![GNU GPLv3 License][license-shield]][license-url]]
-[![LinkedIn][linkedin-shield]][linkedin-url]]
+[![Contributors][contributors-shield]][contributors-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -14,11 +13,8 @@ Generate a local network of random websites
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 ## About The Project
 TODO
