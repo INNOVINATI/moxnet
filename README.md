@@ -41,4 +41,4 @@ Distributed under the GNU GPLv3 License. See `LICENSE` for more information.
 [contributors-shield]: https://img.shields.io/github/contributors/INNOVINATI/moxnet
 [contributors-url]: https://github.com/INNOVINATI/moxnet/graphs/contributors
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/company/innovinati
+[linkedin-url]: https://linkedin.com/company/innovinati
