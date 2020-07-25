@@ -1,12 +1,9 @@
 # moxnet
 Generate a local network of random websites
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![GNU GPLv3 License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Contributors][contributors-shield]][contributors-url]]
+[![GNU GPLv3 License][license-shield]][license-url]]
+[![LinkedIn][linkedin-shield]][linkedin-url]]
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
