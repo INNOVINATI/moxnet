@@ -12,11 +12,19 @@ class Page(object):
         self.links = set([])
         self.path = self.format_url(self.id)
 
+    @property
     def title(self):
         return f'{self.domain} - Page{self.id}'
 
     def format_url(self, id):
+<<<<<<< HEAD
         return f'http://{self.domain}/page{id}.html'
+=======
+        url = f'http://{self.domain}.moxnet.local'
+        if id == 0:
+            return f'{url}/index.html'
+        return f'{url}/page{id}.html'
+>>>>>>> dbb5199430e6182837f367895a073a0ac883ddab
 
     def build(self):
         self.links = [self.format_url(link) if type(link) is int else link for link in self.links]
@@ -34,8 +42,13 @@ class Website(object):
         ls = links if links else self.external_links
         for link in ls:
             # Insert external/real URLs at random
+<<<<<<< HEAD
             page = random.choice(len(self.pages))
             self.pages[page].links.add(link)
+=======
+            page = random.choice(self.pages)
+            self.pages[page.id].links.add(link)
+>>>>>>> dbb5199430e6182837f367895a073a0ac883ddab
 
     def _generate(self, size: int):
         ids = range(size)
