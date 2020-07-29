@@ -1,8 +1,8 @@
 import random
 
-from src.renderer import Renderer
-from src.settings import Settings
-from src.website import Website
+from renderer import Renderer
+from settings import Settings
+from website import Website
 
 
 class Network(object):

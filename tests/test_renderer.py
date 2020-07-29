@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from src.renderer import Renderer
-from src.website import Website
+from renderer import Renderer
+from website import Website
 
 
 class TestRendererInit(TestCase):
