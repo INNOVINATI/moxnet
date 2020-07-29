@@ -10,7 +10,7 @@ class Network(object):
     def __init__(self, settings: Settings):
         self.settings = settings
         self.sites = []
-        num_pages = settings.num_pages/settings.num_domains
+        num_pages = settings.num_pages//settings.num_domains
         for i in range(settings.num_domains):
             domain = f'site{i}'
             k = random.randint(0, settings.num_externals)
