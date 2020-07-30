@@ -1,5 +1,5 @@
 # moxnet
-Generate a local network of random websites
+Generate randomized and interconnected HTML pages along with a matching NGINX configuration to be hosted as a local test network.
 
 [![Contributors][contributors-shield]][contributors-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
@@ -7,8 +7,6 @@ Generate a local network of random websites
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -16,8 +14,6 @@ Generate a local network of random websites
 * [Contributing](#contributing)
 * [License](#license)
 
-## About The Project
-TODO
 
 ## Getting Started
 TODO
