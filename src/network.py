@@ -1,8 +1,8 @@
 import random
 
-from src.generator import Generator
-from src.settings import Settings
-from src.website import Website
+from renderer import Renderer
+from settings import Settings
+from website import Website
 
 
 class Network(object):
@@ -10,7 +10,7 @@ class Network(object):
     def __init__(self, settings: Settings):
         self.settings = settings
         self.sites = []
-        num_pages = settings.num_pages/settings.num_domains
+        num_pages = settings.num_pages//settings.num_domains
         for i in range(settings.num_domains):
             domain = f'site{i}'
             k = random.randint(0, settings.num_externals)

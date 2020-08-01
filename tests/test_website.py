@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.website import Website
+from website import Website
 
 
 class TestWebsiteInit(TestCase):

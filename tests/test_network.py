@@ -1,8 +1,7 @@
 from unittest import TestCase
 
-from src.network import Network
-from src.settings import Settings
-
+from network import Network
+from settings import Settings
 
 class TestNetworkInit(TestCase):
     def test_pages(self):
