@@ -10,7 +10,7 @@
     <hr>
     <ul>
         {% for link in page.links %}
-        <li>{{ link }}</li> <!-- TODO: Build proper link -->
+        <li><a href="{{ link }}">{{ link }}</a></li>
         {% endfor %}
     </ul>
 </body>

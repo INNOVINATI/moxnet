@@ -1,6 +1,6 @@
 import random
 
-from src.renderer import Renderer
+from src.generator import Generator
 from src.settings import Settings
 from src.website import Website
 
@@ -17,7 +17,7 @@ class Network(object):
             ext_links = random.sample(range(settings.num_externals), k)
             w = Website(domain=domain, num_pages=num_pages, ext_links=ext_links)
             self.sites.append(w)
-        self.renderer = Renderer()
+        self.renderer = Generator()
 
     def info(self):
         print('------ moxnet ------')
@@ -29,7 +29,7 @@ class Network(object):
     def build(self, path=None):
         for site in self.sites:
             site.build()
-        self.renderer.render(self.sites, path)
+        self.renderer.generate(self.sites, path)
 
     @property
     def page_count(self):

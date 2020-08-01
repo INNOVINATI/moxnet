@@ -1,7 +1,7 @@
 import click
 
-from network import Network
-from settings import Settings
+from src.network import Network
+from src.settings import Settings
 
 
 @click.command()

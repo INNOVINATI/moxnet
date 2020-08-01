@@ -41,14 +41,14 @@ class Website(object):
             page = random.choice(self.pages)
             self.pages[page.id].links.add(link)
 
-    def _generate(self, size: int):
-        ids = range(size)
+    def _generate(self, size):
+        ids = range(int(size))
         pages = [Page(id=i, domain=self.domain) for i in ids]
         reachable = {0}  # root page
         while len(reachable) < size:
             node = random.choice(list(reachable))
             k = random.randint(1, (len(ids)//3)+1)
-            # Storing links as integers for simplicity and converting them to URL paths on render
+            # Storing links as integers for simplicity and converting them to URL paths on generate
             links = set(random.sample(ids, k=k))
             pages[node].links |= links
             reachable |= links
