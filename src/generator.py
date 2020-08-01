@@ -8,6 +8,7 @@ from src.website import Website
 
 class Generator(object):
     sites = dict()
+    server = ''
 
     def __init__(self):
         self.engine = Environment(
