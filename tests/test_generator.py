@@ -9,8 +9,8 @@ class TestGenerator(TestCase):
         g = Generator()
         w1 = Website('test1.local', num_pages=20)
         w2 = Website('test2.local', num_pages=20)
-        g.generate(sites=[w1, w2], writeFile=False)
+        g.generate(sites=[w1, w2], writeFile=True)
         self.assertEqual(len(g.sites), 2)
-        self.assertEqual(len(g.sites[0]), 20)
-        for i, html in enumerate(g.sites[0]):
-            self.assertTrue(f'<title>{w1.domain} - Page{i}</title>' in html)
+        self.assertEqual(len(g.sites[0].pages), 20)
+        for i, page in enumerate(g.sites[0].pages):
+            self.assertTrue(f'<title>{w1.domain} - Page{i}</title>' in page.html)

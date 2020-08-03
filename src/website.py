@@ -11,6 +11,7 @@ class Page(object):
         self.text = lorem.text()
         self.links = set([])
         self.path = self.format_url(self.id)
+        self.html = None
 
     @property
     def title(self):
