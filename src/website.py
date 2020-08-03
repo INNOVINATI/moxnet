@@ -15,7 +15,7 @@ class Page(object):
 
     @property
     def domain(self):
-        return f'{self.subdomain}.moxnet.local'
+        return f'{self.subdomain}.localhost'
 
     @property
     def title(self):
@@ -38,7 +38,7 @@ class Website(object):
 
     @property
     def domain(self):
-        return f'{self.subdomain}.moxnet.local'
+        return f'{self.subdomain}.localhost'
 
     def injext_links(self, links: [int] = None):
         ls = links if links else self.external_links
