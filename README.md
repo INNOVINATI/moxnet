@@ -1,12 +1,10 @@
 # moxnet
-Test your crawler against a local network of randomised and interconnected HTML pages with auto-generated NGINX and Docker configurations
+Generate a local network of randomised and interconnected HTML pages including plug-and-play Docker/NGINX configurations, i.e. to test a web scraper.
 
 [![Contributors][contributors-shield]][contributors-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
-
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -15,11 +13,17 @@ Test your crawler against a local network of randomised and interconnected HTML 
 * [License](#license)
 
 
-## Getting Started
-TODO
+## Getting started
+Our team at [INNOVINATI](https://innovinati.com) is building web crawlers and scraping data from various sources almost every day. This has inspired us to create simple but effective tools around this topic - some for testing and some for analysis. We believe that data extraction from the web is becoming more powerful by the second, as steadily growing amounts of contents are being published everywhere around the globe. `moxnet` is one of those tools and its purpose is to make testing and simulation as easy as possible. It does several things for you:
+1. Creating a virtual `Network` of domains/websites
+2. Generating interconnected HTML pages with random content and links "underneath" each domain/website
+3. Exporting everything as a plug-and-play test network with Docker and NGINX configurations
+
+We're planning to extend this feature set and are looking forward to helpful and creative [contributions](#contributing)!
 
 ### Prerequisites
-TODO
+* Python3
+* virtualenv
 
 ### Installation
 TODO
