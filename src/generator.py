@@ -17,21 +17,20 @@ class Generator(object):
         self.page_template = self.engine.get_template('page.html')
         self.server_template = self.engine.get_template('nginx.conf')
 
-    def generate(self, sites: [Website], path: str = None):
+    def generate(self, sites: [Website], path: str = None, writeFile: bool = False):
         export_to = path if path else os.path.join(os.getcwd(), 'moxnet')
         self.sites = list(map(lambda site: list(map(lambda page: self.page_template.render(page=page), site.pages)), sites))
         page_template = self.engine.get_template('page.html')
         server_template = self.server_template.render(sites=sites)  #TODO: Implement file writing
+
+        if not writeFile:
+            return
+
         for site in sites:
+            dir = os.path.join(export_to, site.domain)
+            os.makedirs(dir, exist_ok=True)
             for page in site.pages:
                 p = page_template.render(page=page)
-                #TODO: Pull the check outside of the loops
-                f = os.path.join(export_to, site.domain, f'page{page.id}.html')
-                if not os.path.exists(os.path.dirname(f)):
-                    try:
-                        os.makedirs(os.path.dirname(f))
-                    except OSError as exc:  # Guard against race condition
-                        if exc.errno != errno.EEXIST:
-                            raise
-                with open(f, "w") as f:
+                filepath = os.path.join(dir, f'page{page.id}.html')
+                with open(filepath, "w") as f:
                     f.write(p)
