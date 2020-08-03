@@ -1,5 +1,5 @@
 # moxnet
-Generate randomized and interconnected HTML pages along with a matching NGINX configuration to be hosted as a local test network.
+Test your crawler against a local network of randomised and interconnected HTML pages with auto-generated NGINX and Docker configurations
 
 [![Contributors][contributors-shield]][contributors-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
