@@ -32,7 +32,7 @@ class Generator(object):
         os.makedirs(dir_root, exist_ok=True)
 
         for site in sites:
-            dir = os.path.join(dir_root, site.domain)
+            dir = os.path.join(dir_root, site.subdomain)
             os.makedirs(dir, exist_ok=True)
             for page in site.pages:
                 filepath = os.path.join(dir, f'page{page.id}.html')

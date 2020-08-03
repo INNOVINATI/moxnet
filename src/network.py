@@ -12,10 +12,10 @@ class Network(object):
         self.sites = []
         num_pages = settings.num_pages//settings.num_domains
         for i in range(settings.num_domains):
-            domain = f'site{i}'
+            subdomain = f'site{i}'
             k = random.randint(0, settings.num_externals)
             ext_links = random.sample(range(settings.num_externals), k)
-            w = Website(domain=domain, num_pages=num_pages, ext_links=ext_links)
+            w = Website(subdomain=subdomain, num_pages=num_pages, ext_links=ext_links)
             self.sites.append(w)
         self.renderer = Generator()
 
